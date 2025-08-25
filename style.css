@@ -1,153 +1,246 @@
-/* Custom CSS variables */
-:root {
-    --primary: #3b82f6;
-    --secondary: #8b5cf6;
-    --dark: #0f172a;
-    --darker: #020617;
-}
-
-
 body {
-    background-color: rgb(11, 11, 11);  /* Sets background to black */
-    color: white;            /* Sets default text color to white */
-  }
-  
-  /* If you want specific text darker (for contrast) */
-  .body-text {
-    color: rgb(220, 220, 220);
-     } /* Light gray for better readability */
-
-   /* Reset some default styles */
-
-   /* For active state */
-.nav-link.active {
-    color: #3b82f6; /* primary color - change to your preferred active color */
-    font-weight: 600;
-    position: relative;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e0e1a;
+  color: white;
 }
 
-/* Optional: Add underline for active link */
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #3b82f6; /* same as text color */
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 50px;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+header .logo { color: cyan; }
+header ul { list-style: none; display: flex; gap: 20px; }
+header ul li a { color: white; text-decoration: none; }
+
+/* Hero Section Text */
+.hero-text h3 {
+  font-size: 1.6rem;   /* "Hello, It's Me" */
+}
+
+.hero-text h1 {
+  font-size: 4rem;     /* Your Name */
+  font-weight: bold;
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;   /* "And I'm a Web Developer" */
+  margin-top: 15px;
+}
+
+.hero-text p {
+  font-size: 1.3rem;   /* description text */
+  max-width: 550px;
+  margin: 20px 0;
 }
 
 
-/* Gradient text */
-.gradient-text {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+}
+.hero-text h1 span, .hero-text h2 span,
+.about h2 span, .skills h2 span,
+.projects h2 span, .contact h2 span {
+  color: cyan;
+}
+.btn {
+  display: inline-block;
+  background: cyan;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px 5px;
 }
 
-/* Buttons */
-.btn-primary {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    color: rgb(245, 240, 240);
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.5);
-}
-
-.social-icon {
-    color: #e4e7eb; /* Your primary color */
-    transition: all 0.3s ease;
-  }
-  
-  .social-icon:hover {
-    transform: scale(1.1); /* Slight zoom effect */
-    opacity: 0.9; /* Slight transparency change */
-    /* Color remains the same */
-  }
-
-/* Skill bars */
-.skill-bar {
-    height: 8px;
-    background: #1e293b;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: 4px;
-}
-
-/* Cards */
-.card-hover {
-    transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-}
-
-/* Project cards */
-.project-card {
-    background: #1e293b;
-    transition: all 0.3s ease;
-}
-
-/* Contact form inputs */
-.contact-input {
-    background: #1e293b;
-    border: 1px solid #334155;
-    transition: all 0.3s ease;
-}
-
-.contact-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+/* Hero Image */
+.hero-img img {
+  width: 280px;
+  height: auto;
+  border-radius: 8px;     /* small rounding */
+  object-fit: cover;
+  border: 4px solid cyan; /* glowing border */
+  box-shadow: 0 0 15px cyan;
 }
 
 
 
-/* Floating animation */
-.floating {
-    animation: floating 3s ease-in-out infinite;
+
+
+/* About */
+.about { display: flex; padding: 100px 10%; gap: 40px; }
+
+.about-img img {
+  width: 280px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;   /* vertically center text with image */
+  justify-content: space-between;
+  padding: 100px 10%;
+  gap: 50px;
 }
 
-/* Timeline */
-.timeline-item:nth-child(odd) .order-1 {
-    order: 1;
+.about-img img {
+  width: 300px;         /* smaller image */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
-.timeline-item:nth-child(even) .order-1 {
-    order: 2;
+.about-text {
+  flex: 1;
 }
 
-/* Mobile menu */
-#mobile-menu {
-    transition: all 0.3s ease;
+.about-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
 }
 
-/* Back to top button */
-#back-to-top {
-    transition: all 0.3s ease;
+.about-text h3 {
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  color: cyan;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .timeline-item:nth-child(odd) .order-1,
-    .timeline-item:nth-child(even) .order-1 {
-        order: 1;
-        width: 100%;
-    }
+.about-text p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+
+
+
+/* Skills Section */
+.skills {
+  padding: 100px 10%;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Technical Skills */
+.technical-skills {
+  flex: 1;
+  min-width: 280px;
+}
+.technical-skills h3 { font-size: 1.8rem; margin-bottom: 20px; }
+.skill-bar { margin: 15px 0; }
+.skill-bar .bar { height: 10px; background: #333; border-radius: 5px; overflow: hidden; }
+.skill-bar .bar span {
+  display: block;
+  height: 10px;
+  background: cyan;
+  width: 0;
+  transition: width 2s ease-in-out;
+}
+
+/* Professional Skills */
+.professional-skills {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.professional-skills h3 { 
+  width: 100%; 
+  text-align: center; 
+  font-size: 1.8rem; 
+  margin-bottom: 20px; 
+}
+.circle {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 8px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
+/* Circles */
+.professional-skills { display: flex; flex-wrap: wrap; gap: 30px; }
+.circle {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 8px solid #333;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; color: rgb(4, 4, 4); font-size: 14px;
+}
+
+/* Projects */
+.projects { padding: 100px 10%; }
+.portfolio-gallery { display: flex; gap: 20px; flex-wrap: wrap; }
+.item { background: #1c1c2c; padding: 15px; border-radius: 10px; text-align: center; }
+.item img { max-width: 100%; border-radius: 8px; }
+
+/* Projects Gallery */
+.portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.portfolio-gallery .item {
+  width: 300px;         /* fixed card size */
+  background: #1c1c2c;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-gallery .item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-gallery .item img {
+  width: 100%;          /* fit inside the box */
+  height: 200px;        /* fixed height */
+  object-fit: cover;    /* crop instead of stretch */
+  border-radius: 8px;
+}
+
+/* Contact */
+.contact { padding: 100px 10%; text-align: center; }
+.contact form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
+.contact input, .contact textarea {
+  padding: 10px; border: none; border-radius: 5px; outline: none;
 }
